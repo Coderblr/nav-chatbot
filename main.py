@@ -27,7 +27,7 @@ def scrape_website():
         response = requests.get(url)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
-            # Extract text from paragraphs and headings
+            # Extract text from paragraphs and headings  nghnhg
             text_elements = soup.find_all(['p', 'h1', 'h2', 'h3'])
             content = " ".join([elem.get_text(strip=True) for elem in text_elements])
             return content[:10000]  # Limit content to avoid context overflow
